@@ -1,10 +1,8 @@
-import pygame
+from tkinter import *
 
-running = True
+class Application():
+    def __init__(self, WIDTH, HEIGHT):
+        pass
 
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pass
-
-#Lol
+if __name__ == "__main__":
+    Application()
