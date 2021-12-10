@@ -12,3 +12,9 @@ class Application():
 
 if __name__ == "__main__":
     Application(800, 600).run()
+
+
+a = Application(1,2)
+b = Application(1,2)
+
+print(a > b)
