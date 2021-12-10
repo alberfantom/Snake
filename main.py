@@ -11,4 +11,4 @@ class Application():
         self.root.mainloop()
 
 if __name__ == "__main__":
-    Application(800, 600)
+    Application(800, 600).run()
