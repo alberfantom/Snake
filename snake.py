@@ -5,7 +5,7 @@ class Snake():
     def __init__(self,fild):
 
         self.snake = list()
-        self.snake.append([fild.WIDTH/2,fild.HEIGHT/2])
+        self.snake.append([fild.size/2,fild.size/2])
 
     def move(self,side):
 
