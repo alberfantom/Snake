@@ -4,25 +4,25 @@ class Snake():
     
     def __init__(self,fild):
 
-        self.snake = list()
-        self.snake.append([fild.size/2,fild.size/2])
+        self.coords = list()
+        self.coords.append([fild.size/2,fild.size/2])
 
     def move(self,side):
 
-        i = len(self.snake) - 1
+        i = len(self.coords) - 1
         while i > 0:
-            self.snake[i] = self.snake[i - 1]
+            self.coords[i] = self.coords[i - 1]
 
             i -= 1
         
         if side == "b'w'":
-            self.snake[0][1] -= 1
+            self.coords[0][1] -= 1
         elif side == "b's'":
-            self.snake[0][1] += 1
+            self.coords[0][1] += 1
         elif side == "b'a'":
-            self.snake[0][0] -= 1
+            self.coords[0][0] -= 1
         elif side == "b'd'":
-            self.snake[0][0] += 1
+            self.coords[0][0] += 1
 
 
 
