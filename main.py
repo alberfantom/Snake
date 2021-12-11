@@ -28,7 +28,7 @@ while True:
         start_time_move = time.time()
         _snake.move(direction)
     
-    if (time.time() - start_time_show) > 0.1:
+    if (time.time() - start_time_show) > 0.3:
         start_time_show = time.time()
         os.system("CLS")
         _field.fill(_snake, _apple)
