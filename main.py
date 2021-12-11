@@ -1,4 +1,4 @@
-from time import sleep
+import time
 import msvcrt
 from apple import *
 from field import *
@@ -16,21 +16,23 @@ _apple = Apple(_field,_snake)
 
 direction = ''
 
+start_time_show = time.time()
+start_time_move = time.time()
 while True:
-    sleep(0.5)
+    
 
     if msvcrt.kbhit():
         direction = format(msvcrt.getch())
+
+    if (time.time() - start_time_move) > 0.3:
+        start_time_move = time.time()
+        _snake.move(direction)
     
-    _snake.move(direction)
-
-    # _field.show(_field.fill(_snake, _apple))
-    
-    _field.fill(_snake, _apple)
-
-    os.system("CLS")
-
-    _field.show()
+    if (time.time() - start_time_show) > 0.1:
+        start_time_show = time.time()
+        os.system("CLS")
+        _field.fill(_snake, _apple)
+        _field.show()
 
 
     
