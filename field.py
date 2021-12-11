@@ -7,7 +7,7 @@ class Field:
     def fill(self, _snake, _apple):
         for row in range(self.size):
             for column in range(self.size):
-                if [row, column] in _apple.coord:
+                if [row, column] in _apple:
                     self.field += "$"
 
                 elif [row, column] in _snake:
