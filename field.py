@@ -16,4 +16,12 @@ class Field:
                 else:
                     self.field += "#" 
 
-            self.field += "\n"
+            if row != self.size - 1:
+                self.field += "\n"
+
+    def show(self):
+        print("-" * 5)
+
+        print(self.field)
+
+        print("-" * 5)
