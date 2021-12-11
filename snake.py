@@ -13,5 +13,16 @@ class Snake():
         while i > 0:
             self.snake[i] = self.snake[i - 1]
 
+            i -= 1
+        
+        if side == 'w':
+            self.snake[0][1] -= 1
+        elif side == 's':
+            self.snake[0][1] += 1
+        elif side == 'a':
+            self.snake[0][0] -= 1
+        elif side == 'd':
+            self.snake[0][0] += 1
+
 
 
