@@ -4,8 +4,6 @@ class Field:
 
         self.field = str()
     
-    # DECORATOR
-
     def fill(self, _snake, _apple):
         for row in range(self.size):
             for column in range(self.size):
