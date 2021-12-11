@@ -15,13 +15,13 @@ class Snake():
 
             i -= 1
         
-        if side == 'w':
+        if side == "b'w'":
             self.snake[0][1] -= 1
-        elif side == 's':
+        elif side == "b's'":
             self.snake[0][1] += 1
-        elif side == 'a':
+        elif side == "b'a'":
             self.snake[0][0] -= 1
-        elif side == 'd':
+        elif side == "b'd'":
             self.snake[0][0] += 1
 
 
