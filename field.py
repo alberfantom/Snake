@@ -1,10 +1,10 @@
 class Field:
     def __init__(self, size):
         self.size = size
-
-        self.field = str()
     
     def fill(self, _snake, _apple):
+        self.field = str()
+
         for row in range(self.size):
             for column in range(self.size):
                 if [row, column] in _apple.coord:
@@ -20,8 +20,8 @@ class Field:
                 self.field += "\n"
 
     def show(self):
-        print("-" * 5)
+        print("-" * self.size)
 
         print(self.field)
 
-        print("-" * 5)
+        print("-" * self.size)
