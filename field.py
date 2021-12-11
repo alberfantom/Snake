@@ -1,7 +1,7 @@
 class Field:
-    def __init__(self, size):
+    def init(self, size):
         self.size = size
-    
+
     def fill(self, _snake, _apple):
         self.field = str()
 
@@ -14,14 +14,15 @@ class Field:
                     self.field += "@"
 
                 else:
-                    self.field += "#" 
+                    self.field += "." 
 
-            if row != self.size - 1:
+
+            if self.size != row:
                 self.field += "\n"
 
     def show(self):
-        print("-" * self.size)
+        print("#" * self.size)
 
         print(self.field)
 
-        print("-" * self.size)
+        print("#" * self.size)
