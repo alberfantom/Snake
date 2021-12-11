@@ -1,10 +1,18 @@
-class Field():
-    def __init__(self, WIDTH, HEIGHT):
-        self.field = list()
+class Field:
+    def __init__(self, size):
+        self.size = size
 
-        self.WIDTH = WIDTH
-        self.HEIGHT = HEIGHT
+        self.field = str()
+    
+    # DECORATOR
 
-        for row in range(WIDTH):
-            for column in range(HEIGHT):
-                pass
+    def fill(self):
+        for row in range(self.size):
+            for column in range(self.size):
+                self.field += "#"
+
+            self.field += "\n"
+            
+obj = Field(5)
+
+obj.fill()
