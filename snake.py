@@ -1,7 +1,7 @@
 from field import *
 
 class Snake():
-
+    
     def __init__(self,fild):
 
         snake = list()
