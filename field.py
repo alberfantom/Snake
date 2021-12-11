@@ -7,10 +7,10 @@ class Field:
     def fill(self, _snake, _apple):
         for row in range(self.size):
             for column in range(self.size):
-                if [row, column] in _apple:
+                if [row, column] in _apple.coord:
                     self.field += "$"
 
-                elif [row, column] in _snake:
+                elif [row, column] in _snake.coords:
                     self.field += "@"
 
                 else:
