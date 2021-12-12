@@ -30,9 +30,9 @@ while True:
     
     if (time.time() - start_time_show) > 0.3:
         start_time_show = time.time()
-        os.system("CLS")
+        
+        # print("\n" * 2)
+        os.system("CLS") 
+
         _field.fill(_snake, _apple)
         _field.show()
-
-
-    
