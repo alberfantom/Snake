@@ -5,6 +5,8 @@ class Field:
     def fill(self, _snake, _apple):
         self.field = str()
 
+        print("\n") # Отделение от другого поля
+
         # Верхняя граница
         self.field += f" #{'#' * (self.size - 1)}\n"
 
