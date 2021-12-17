@@ -3,7 +3,6 @@ import msvcrt
 from apple import *
 from field import *
 from snake import *
-import os
 
 
 if __name__ == "__main__":
@@ -30,9 +29,6 @@ while True:
     
     if (time.time() - start_time_show) > 0.3:
         start_time_show = time.time()
-        
-        # print("\n" * 2)
-        os.system("CLS") 
 
         _field.fill(_snake, _apple)
         _field.show()
