@@ -5,7 +5,7 @@ class Apple():
         self.spawn_apple(snake, field)
         
     def spawn_apple(self, snake, field):
-        self.coord = [randint(1, field.size), randint(1, field.size)]
+        self.coord = [randint(1, field.size - 1), randint(1, field.size - 1)]
         
         if self.coord in snake.coords:
             self.spawn_apple()
