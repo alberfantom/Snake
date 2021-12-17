@@ -5,7 +5,12 @@ class Snake():
         self.coords = list()
         self.coords.append([field.size // 2, field.size // 2])
 
-    def move(self, side):
+    def move(self, side, apple,field):
+        if apple.coord == self.coords[0]:
+            self.coords.append(self.coords[len(self.coords) - 1])
+            apple.spawn_apple(self,field)
+
+
         i = len(self.coords) - 1
         while i > 0:
             self.coords[i] = self.coords[i - 1]
