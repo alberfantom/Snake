@@ -15,7 +15,6 @@ _apple = Apple(_field,_snake)
 
 direction = ''
 
-start_time_show = time.time()
 start_time_move = time.time()
 while True:
     
@@ -25,10 +24,10 @@ while True:
 
     if (time.time() - start_time_move) > 0.3:
         start_time_move = time.time()
-        _snake.move(direction)
-    
-    if (time.time() - start_time_show) > 0.3:
-        start_time_show = time.time()
-
+        _snake.move(direction,_apple,_field)
         _field.fill(_snake, _apple)
         _field.show()
+    
+   
+
+        
