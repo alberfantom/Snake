@@ -17,16 +17,16 @@ class Snake():
 
             i -= 1
         
-        if side == "b'w'":
+        if side == "w":
             self.coords[0][0] -= 1
-            
-        elif side == "b's'":
+
+        elif side == "s":
             self.coords[0][0] += 1
 
-        elif side == "b'a'":
+        elif side == "a":
             self.coords[0][1] -= 1
 
-        elif side == "b'd'":
+        elif side == "d":
             self.coords[0][1] += 1
 
 
