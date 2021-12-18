@@ -20,7 +20,7 @@ while True:
     
 
     if msvcrt.kbhit():
-        direction = format(msvcrt.getch())
+        direction = format(msvcrt.getch().decode())
 
     if (time.time() - start_time_move) > 0.3:
         start_time_move = time.time()
