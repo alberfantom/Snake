@@ -27,7 +27,6 @@ while True:
         _snake.move(direction,_apple,_field)
         _field.fill(_snake, _apple)
         _field.show()
-    
    
 
         
