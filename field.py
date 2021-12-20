@@ -16,8 +16,6 @@ class Field:
 
             # Содержимое
             for column in range(self.size):
-                
-
                 if [row, column] in _snake.coords:
                     self.field += "@"
 
