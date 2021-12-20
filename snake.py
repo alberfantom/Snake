@@ -8,7 +8,8 @@ class Snake():
             i = len(self.coords) - 1
 
             while i > 0: 
-                self.coords[i] = self.coords[i - 1]
+                self.coords[i][0] = self.coords[i - 1][0]
+                self.coords[i][1] = self.coords[i - 1][1]
 
                 i -= 1
 
@@ -16,6 +17,8 @@ class Snake():
             coord_basic = [self.coords[-1][0], self.coords[-1][1]]
 
             # x, y - стоят не правильно
+
+            print(self.coords)
 
             if side == "w":
                 self.coords[0][0] -= 1
@@ -28,6 +31,8 @@ class Snake():
 
             elif side == "d":
                 self.coords[0][1] += 1
+
+            print(self.coords)
             
         if self.is_collision_apple(_apple):
             self.coords.append(coord_basic)
