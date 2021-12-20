@@ -1,12 +1,11 @@
 from random import *
-import main
 
 class Apple():
-    def __init__(self):
-        self.spawn_apple()
+    def __init__(self, _field, _snake):      
+        self.spawn_apple(_field, _snake)
+
+    def spawn_apple(self, _field, _snake):
+        self.coord = [randint(1, _field.size - 1), randint(1, _field.size - 1)]
         
-    def spawn_apple(self):
-        self.coord = [randint(1, main.field.size - 1), randint(1, main.field.size - 1)]
-        
-        if self.coord in main.snake.coords:
+        if self.coord in _snake.coords:
             self.spawn_apple()
