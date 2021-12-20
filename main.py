@@ -19,9 +19,10 @@ while True:
 
     if (time.time() - start_time_move) > 0.3:
         start_time_move = time.time()
+
         _snake.move(direction, _field, _apple)
+
         _field.fill(_snake, _apple)
         _field.show()
-   
 
         
