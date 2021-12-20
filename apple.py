@@ -1,6 +1,7 @@
+from coord import Coord
 from random import *
 
-class Apple():
+class Apple(Coord):
     def __init__(self, _field, _snake):      
         self.spawn_apple(_field, _snake)
 
