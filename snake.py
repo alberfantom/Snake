@@ -3,15 +3,20 @@ class Snake():
         self.coords = list()
         self.coords.append([_field.size // 2, _field.size // 2])
 
-    def move(self, side, _field):
-        i = len(self.coords) - 1
-        
-        while i > 0:
-            self.coords[i] = self.coords[i - 1]
+    def move(self, side, _field, _apple):
+        if len(self.coords) != 1:
+            i = len(self.coords) - 1
 
-            i -= 1
+            while i > 0: 
+                print(self.coords)
+
+                self.coords[i] = self.coords[i - 1]
+
+                i -= 1
 
         if not self.is_collision_border(_field):
+            coord_old_header = [self.coords[0][0], self.coords[0][1]]
+
             if side == "w":
                 self.coords[0][0] -= 1
 
@@ -24,22 +29,27 @@ class Snake():
             elif side == "d":
                 self.coords[0][1] += 1
 
+        if self.is_collision_apple(_apple):
+            self.coords.append(coord_old_header)
+            
+            _apple.spawn_apple(_field, self)
+
     def is_collision_border(self, _field):
         coord = self.coords[0]
 
         # Правая и левая граница
         # Верхняя и нижняя граница
-        if coord[0] == 0 or coord[0] == _field.size \
-            or coord[1] == 0 or coord[1] == _field.size:
+        if coord[0] == 0 or coord[0] == _field.size - 1 \
+            or coord[1] == 0 or coord[1] == _field.size - 1:
                 return True
         
         return False
     
-    def is_collision_apple(self):
-        if self.apple.coord == self.coords[0]:
-            self.coords.append([self.coords[-1][0], self.coords[-1][0]])
+    def is_collision_apple(self, _apple):
+        if _apple.coord == self.coords[0]:
+            return True
 
-            self.apple.spawn_apple(self, self.field)
+        return False
 
     def is_collision_snake(self):
         pass
