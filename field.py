@@ -19,8 +19,9 @@ class Field:
                 if [row, column] in _snake.coords:
                     self.field += "@"
 
-                elif _apple.coord[0] == row and _apple.coord[1] == column:
-                    self.field += "$"
+                elif _apple.coord[0] == row and \
+                        _apple.coord[1] == column:
+                            self.field += "$"
 
                 else:
                     self.field += "." 
