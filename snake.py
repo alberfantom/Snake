@@ -8,14 +8,14 @@ class Snake():
             i = len(self.coords) - 1
 
             while i > 0: 
-                print(self.coords)
-
                 self.coords[i] = self.coords[i - 1]
 
                 i -= 1
 
         if not self.is_collision_border(_field):
-            coord_old_header = [self.coords[0][0], self.coords[0][1]]
+            coord_basic = [self.coords[-1][0], self.coords[-1][1]]
+
+            # x, y - стоят не правильно
 
             if side == "w":
                 self.coords[0][0] -= 1
@@ -28,10 +28,10 @@ class Snake():
 
             elif side == "d":
                 self.coords[0][1] += 1
-
-        if self.is_collision_apple(_apple):
-            self.coords.append(coord_old_header)
             
+        if self.is_collision_apple(_apple):
+            self.coords.append(coord_basic)
+
             _apple.spawn_apple(_field, self)
 
     def is_collision_border(self, _field):
@@ -39,8 +39,8 @@ class Snake():
 
         # Правая и левая граница
         # Верхняя и нижняя граница
-        if coord[0] == 0 or coord[0] == _field.size - 1 \
-            or coord[1] == 0 or coord[1] == _field.size - 1:
+        if coord[0] == 0 or coord[0] == _field.size \
+            or coord[1] == 0 or coord[1] == _field.size:
                 return True
         
         return False
