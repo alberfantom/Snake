@@ -16,11 +16,11 @@ class Field:
 
             # Содержимое
             for column in range(self.size):
-                if [row, column] in _snake.coords:
+                if [column, row] in _snake.coords:
                     self.field += "@"
 
-                elif _apple.coord[0] == row and \
-                        _apple.coord[1] == column:
+                elif _apple.coord[0] == column and \
+                        _apple.coord[1] == row:
                             self.field += "$"
 
                 else:
